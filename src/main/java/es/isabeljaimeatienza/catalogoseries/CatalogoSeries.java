@@ -35,12 +35,27 @@ public class CatalogoSeries {
         generoTerror.setNombre("Terror");
         Genero generoSuspense = new Genero();
         generoSuspense.setNombre("Suspense");
-        
-       
+
+        Serie itawonClass = new Serie();
+        itawonClass.setGenero(generoRomance);
+        itawonClass.setTítulo("Itawon Class");
+        itawonClass.setValoracion(Boolean.TRUE);
+        Serie bongSoon = new Serie();
+        bongSoon.setGenero(generoComedia);
+        bongSoon.setTítulo("Strong Girl BongSoon");
+        bongSoon.setValoracion(Boolean.TRUE);
+        Serie alosgatosnitocarlos = new Serie();
+        alosgatosnitocarlos.setGenero(generoTerror);
+        alosgatosnitocarlos.setTítulo("A los gatos");
+        alosgatosnitocarlos.setValoracion(Boolean.FALSE);
+
         em.persist(generoRomance);
         em.persist(generoComedia);
         em.persist(generoTerror);
         em.persist(generoSuspense);
+        em.persist(itawonClass);
+        em.persist(bongSoon);
+        em.persist(alosgatosnitocarlos);
         em.getTransaction().commit();
         // Cerrar la conexión con la base de datos
         em.close();

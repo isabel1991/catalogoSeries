@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Apr 17 11:45:46 CEST 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0171-8787-a6ff-00000e77d900 
+Fri Apr 17 13:44:10 CEST 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0171-87f4-0dae-00000e7a3220 
 on database directory C:\Users\cadit\OneDrive\Documents\NetBeansProjects\CatalogoSeries\CatalogoSeries with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
 Loaded from file:/C:/Users/cadit/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
@@ -12,5 +12,5 @@ os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Fri Apr 17 11:45:46 CEST 2020:
-Shutting down instance a816c00e-0171-8787-a6ff-00000e77d900 on database directory C:\Users\cadit\OneDrive\Documents\NetBeansProjects\CatalogoSeries\CatalogoSeries with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Fri Apr 17 13:44:11 CEST 2020:
+Shutting down instance a816c00e-0171-87f4-0dae-00000e7a3220 on database directory C:\Users\cadit\OneDrive\Documents\NetBeansProjects\CatalogoSeries\CatalogoSeries with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
