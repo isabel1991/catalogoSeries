@@ -49,6 +49,7 @@ public class CatalogoSeries {
         alosgatosnitocarlos.setTítulo("A los gatos");
         alosgatosnitocarlos.setValoracion(Boolean.FALSE);
 
+        
         em.persist(generoRomance);
         em.persist(generoComedia);
         em.persist(generoTerror);
@@ -64,5 +65,6 @@ public class CatalogoSeries {
             DriverManager.getConnection("jdbc:derby:CatalogoSeries;shutdown=true");
         } catch (SQLException ex) {
         }
+           
     }
 }
