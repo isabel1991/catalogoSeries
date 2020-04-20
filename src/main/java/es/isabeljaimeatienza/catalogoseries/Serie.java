@@ -66,6 +66,12 @@ public class Serie implements Serializable {
     @JoinColumn(name = "GENERO", referencedColumnName = "ID")
     @ManyToOne(optional = false)
     private Genero genero;
+    @JoinColumn(name = "IDIOMA", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private Idioma idioma;
+    @JoinColumn(name = "PAIS", referencedColumnName = "ID")
+    @ManyToOne(optional = false)
+    private Nacionalidad pais;
 
     public Serie() {
     }
@@ -149,6 +155,22 @@ public class Serie implements Serializable {
 
     public void setGenero(Genero genero) {
         this.genero = genero;
+    }
+
+    public Idioma getIdioma() {
+        return idioma;
+    }
+
+    public void setIdioma(Idioma idioma) {
+        this.idioma = idioma;
+    }
+
+    public Nacionalidad getPais() {
+        return pais;
+    }
+
+    public void setPais(Nacionalidad pais) {
+        this.pais = pais;
     }
 
     @Override

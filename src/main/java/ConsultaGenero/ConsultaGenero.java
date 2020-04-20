@@ -5,6 +5,7 @@
  */
 package ConsultaGenero;
 
+
 import es.isabeljaimeatienza.catalogoseries.Genero;
 import es.isabeljaimeatienza.catalogoseries.Serie;
 import java.sql.DriverManager;

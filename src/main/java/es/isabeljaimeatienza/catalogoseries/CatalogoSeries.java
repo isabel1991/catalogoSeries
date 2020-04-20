@@ -5,6 +5,7 @@
  */
 package es.isabeljaimeatienza.catalogoseries;
 
+import java.math.BigDecimal;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -28,6 +29,7 @@ public class CatalogoSeries {
 
         // REALIZAR AQUÍ LAS OPERACIONES SOBRE LA BASE DE DATOS
         em.getTransaction().begin();
+        // GENEROS -------------------------------------------------
         Genero generoRomance = new Genero(null, "Romance");
         Genero generoComedia = new Genero();
         generoComedia.setNombre("Comedia");
@@ -36,24 +38,62 @@ public class CatalogoSeries {
         Genero generoSuspense = new Genero();
         generoSuspense.setNombre("Suspense");
 
+        // NACIONALIDAD--------------------------------------
+        Nacionalidad nacionalidadEeuu = new Nacionalidad();
+        nacionalidadEeuu.setPais("EEUU");
+        Nacionalidad nacionalidadSpain = new Nacionalidad();
+        nacionalidadSpain.setPais("Espana");
+        Nacionalidad nacionalidadFrancia = new Nacionalidad();
+        nacionalidadFrancia.setPais("Francia");
+        Nacionalidad nacionalidadCorea = new Nacionalidad();
+        nacionalidadCorea.setPais("Corea del Sur");
+
+        // IDIOMAS--------------------------------------
+        Idioma idiomaIngles = new Idioma();
+        idiomaIngles.setCodigo("ENG");
+        idiomaIngles.setNombre("Inglés");
+        Idioma idiomaSpanish = new Idioma();
+        idiomaSpanish.setCodigo("SPA");
+        idiomaSpanish.setNombre("Español");
+        Idioma idiomaFrances = new Idioma();
+        idiomaFrances.setCodigo("FRA");
+        idiomaFrances.setNombre("Francés");
+        Idioma idiomaCorean = new Idioma();
+        idiomaCorean.setCodigo("COR");
+        idiomaCorean.setNombre("Coreano");
+        //Series-----------------------------------------------------
         Serie itawonClass = new Serie();
         itawonClass.setGenero(generoRomance);
         itawonClass.setTítulo("Itawon Class");
         itawonClass.setValoracion(Boolean.TRUE);
+        itawonClass.setPais(nacionalidadSpain);
+        itawonClass.setIdioma(idiomaSpanish);
+        itawonClass.setPrecio(BigDecimal.valueOf(15.65));
         Serie bongSoon = new Serie();
         bongSoon.setGenero(generoComedia);
         bongSoon.setTítulo("Strong Girl BongSoon");
+        bongSoon.setPais(nacionalidadCorea);
+        bongSoon.setIdioma(idiomaCorean);
         bongSoon.setValoracion(Boolean.TRUE);
         Serie alosgatosnitocarlos = new Serie();
         alosgatosnitocarlos.setGenero(generoTerror);
-        alosgatosnitocarlos.setTítulo("A los gatos");
+        alosgatosnitocarlos.setPais(nacionalidadEeuu);
+        alosgatosnitocarlos.setIdioma(idiomaIngles);
+        alosgatosnitocarlos.setTítulo("Alosgatos");
         alosgatosnitocarlos.setValoracion(Boolean.FALSE);
 
-        
         em.persist(generoRomance);
         em.persist(generoComedia);
         em.persist(generoTerror);
-        em.persist(generoSuspense);
+        em.persist(nacionalidadEeuu);
+        em.persist(nacionalidadSpain);
+        em.persist(nacionalidadFrancia);
+        em.persist(nacionalidadCorea);
+        em.persist(idiomaSpanish);
+        em.persist(idiomaIngles);
+        em.persist(idiomaFrances);
+        em.persist(idiomaCorean);
+        em.persist(generoRomance);
         em.persist(itawonClass);
         em.persist(bongSoon);
         em.persist(alosgatosnitocarlos);
@@ -65,6 +105,6 @@ public class CatalogoSeries {
             DriverManager.getConnection("jdbc:derby:CatalogoSeries;shutdown=true");
         } catch (SQLException ex) {
         }
-           
+
     }
 }

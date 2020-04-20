@@ -6,7 +6,9 @@
 package es.isabeljaimeatienza.catalogoseries;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -21,13 +24,12 @@ import javax.persistence.Table;
  * @author cadit
  */
 @Entity
-@Table(name = "GENERO")
+@Table(name = "NACIONALIDAD")
 @NamedQueries({
-    @NamedQuery(name = "Genero.findAll", query = "SELECT g FROM Genero g"),
-    @NamedQuery(name = "Genero.findById", query = "SELECT g FROM Genero g WHERE g.id = :id"),
-    @NamedQuery(name = "Genero.findByCodigo", query = "SELECT g FROM Genero g WHERE g.codigo = :codigo"),
-    @NamedQuery(name = "Genero.findByNombre", query = "SELECT g FROM Genero g WHERE g.nombre = :nombre")})
-public class Genero implements Serializable {
+    @NamedQuery(name = "Nacionalidad.findAll", query = "SELECT n FROM Nacionalidad n"),
+    @NamedQuery(name = "Nacionalidad.findById", query = "SELECT n FROM Nacionalidad n WHERE n.id = :id"),
+    @NamedQuery(name = "Nacionalidad.findByPais", query = "SELECT n FROM Nacionalidad n WHERE n.pais = :pais")})
+public class Nacionalidad implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -35,22 +37,22 @@ public class Genero implements Serializable {
     @Basic(optional = false)
     @Column(name = "ID")
     private Integer id;
-    @Column(name = "CODIGO")
-    private String codigo;
     @Basic(optional = false)
-    @Column(name = "NOMBRE")
-    private String nombre;
+    @Column(name = "PAIS")
+    private String pais;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pais")
+    private Collection<Serie> serieCollection;
 
-    public Genero() {
+    public Nacionalidad() {
     }
 
-    public Genero(Integer id) {
+    public Nacionalidad(Integer id) {
         this.id = id;
     }
 
-    public Genero(Integer id, String nombre) {
+    public Nacionalidad(Integer id, String pais) {
         this.id = id;
-        this.nombre = nombre;
+        this.pais = pais;
     }
 
     public Integer getId() {
@@ -61,20 +63,20 @@ public class Genero implements Serializable {
         this.id = id;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getPais() {
+        return pais;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Collection<Serie> getSerieCollection() {
+        return serieCollection;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setSerieCollection(Collection<Serie> serieCollection) {
+        this.serieCollection = serieCollection;
     }
 
     @Override
@@ -87,10 +89,10 @@ public class Genero implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Genero)) {
+        if (!(object instanceof Nacionalidad)) {
             return false;
         }
-        Genero other = (Genero) object;
+        Nacionalidad other = (Nacionalidad) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -99,7 +101,7 @@ public class Genero implements Serializable {
 
     @Override
     public String toString() {
-        return "es.isabeljaimeatienza.catalogoseries.Genero[ id=" + id + " ]";
+        return "es.isabeljaimeatienza.catalogoseries.Nacionalidad[ id=" + id + " ]";
     }
     
 }

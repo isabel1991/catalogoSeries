@@ -4,6 +4,16 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>es.isabeljaimeatienza.catalogoseries.Serie</class>
     <class>es.isabeljaimeatienza.catalogoseries.Genero</class>
+    <class>es.isabeljaimeatienza.catalogoseries.Nacionalidad</class>
+    <class>es.isabeljaimeatienza.catalogoseries.Idioma</class>
+    <class>CatalogoSeries.Idioma</class>
+    <class>CatalogoSeries.Nacionalidad</class>
+    <class>CatalogoSeries.Serie</class>
+    <class>CatalogoSeries.Genero</class>
+    <class>ConsultaGenero.Nacionalidad</class>
+    <class>ConsultaGenero.Serie</class>
+    <class>ConsultaGenero.Genero</class>
+    <class>ConsultaGenero.Idioma</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby:C:\Users\cadit\OneDrive\Documents\NetBeansProjects\CatalogoSeries\CatalogoSeries; create=true"/>
       <property name="javax.persistence.jdbc.user" value="APP"/>
